@@ -1,0 +1,231 @@
+{
+    "database": [
+        {
+            "Student Id": "3109998",
+            "Student Name": "Alison Keith",
+            "Year": "Sophomore",
+            "School": "School of Computer Information and Data Sciences",
+            "Major": "Computer Science",
+            "Grade": "72"
+        },
+        {
+            "Student Id": "1778924",
+            "Student Name": "Ms. Sarah Stewart DDS",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "Spanish Language & Literature",
+            "Grade": "69"
+        },
+        {
+            "Student Id": "5295803",
+            "Student Name": "Cathy Duarte PhD",
+            "Year": "Sophomore",
+            "School": "School of Arts and Humanities",
+            "Major": "Drama & Theatre Arts",
+            "Grade": "51"
+        },
+        {
+            "Student Id": "1645316",
+            "Student Name": "Bryce Stokes",
+            "Year": "Sophomore",
+            "School": "School of Engineering",
+            "Major": "Engineering & Industrial Management",
+            "Grade": "28"
+        },
+        {
+            "Student Id": "7077015",
+            "Student Name": "Dr. Felicia Hardy DVM",
+            "Year": "Junior",
+            "School": "School of Arts and Humanities",
+            "Major": "Religious Studies",
+            "Grade": "14"
+        },
+        {
+            "Student Id": "1002030",
+            "Student Name": "Helen Johnson DDS",
+            "Year": "Freshman",
+            "School": "School of Computer Information and Data Sciences",
+            "Major": "Cybersecurity",
+            "Grade": "56"
+        },
+        {
+            "Student Id": "6138724",
+            "Student Name": "Jim Humphrey Jr.",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "Economics",
+            "Grade": "73"
+        },
+        {
+            "Student Id": "7635541",
+            "Student Name": "David Hays DDS",
+            "Year": "Junior",
+            "School": "School of Arts and Humanities",
+            "Major": "Art History; Criticism & Conservation",
+            "Grade": "33"
+        },
+        {
+            "Student Id": "1702950",
+            "Student Name": "Dr. Frank Gamble",
+            "Year": "Sophomore",
+            "School": "School of Arts and Humanities",
+            "Major": "Spanish Language & Literature",
+            "Grade": "46"
+        },
+        {
+            "Student Id": "6983787",
+            "Student Name": "Dr. Rhonda Thomas",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "Art History; Criticism & Conservation",
+            "Grade": "28"
+        },
+        {
+            "Student Id": "6443221",
+            "Student Name": "Brian Estrada DVM",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "Film Cinema Studies",
+            "Grade": "40"
+        },
+        {
+            "Student Id": "2135038",
+            "Student Name": "Ms. Carrie Bentley MD",
+            "Year": "Senior",
+            "School": "School of Arts and Humanities",
+            "Major": "Art History; Criticism & Conservation",
+            "Grade": "53"
+        },
+        {
+            "Student Id": "3892933",
+            "Student Name": "Mrs. Rebecca Mercer DDS",
+            "Year": "Sophomore",
+            "School": "School of Arts and Humanities",
+            "Major": "Classics & Classical Literatures",
+            "Grade": "11"
+        },
+        {
+            "Student Id": "8732675",
+            "Student Name": "Jose Cowan DDS",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "History",
+            "Grade": "61"
+        },
+        {
+            "Student Id": "6895426",
+            "Student Name": "Ms. Christina Erickson",
+            "Year": "Sophomore",
+            "School": "School of Arts and Humanities",
+            "Major": "Comparative Literature",
+            "Grade": "13"
+        },
+        {
+            "Student Id": "9076821",
+            "Student Name": "Terri Sutton",
+            "Year": "Senior",
+            "School": "School of Arts and Humanities",
+            "Major": "Comparative Literature",
+            "Grade": "96"
+        },
+        {
+            "Student Id": "8746953",
+            "Student Name": "Darlene Garcia MD",
+            "Year": "Freshman",
+            "School": "School of Computer Information and Data Sciences",
+            "Major": "Cybersecurity",
+            "Grade": "48"
+        },
+        {
+            "Student Id": "5810977",
+            "Student Name": "Breanna Sparks",
+            "Year": "Junior",
+            "School": "School of Engineering",
+            "Major": "Biomedical Engineering",
+            "Grade": "70"
+        },
+        {
+            "Student Id": "4021516",
+            "Student Name": "Jeff Graves Jr.",
+            "Year": "Senior",
+            "School": "School of Arts and Humanities",
+            "Major": "Psychology",
+            "Grade": "55"
+        },
+        {
+            "Student Id": "9160826",
+            "Student Name": "Lucas Wilson",
+            "Year": "Junior",
+            "School": "School of Engineering",
+            "Major": "Space Engineering",
+            "Grade": "31"
+        },
+        {
+            "Student Id": "9564900",
+            "Student Name": "Mr. Wesley Martin PhD",
+            "Year": "Freshman",
+            "School": "School of Engineering",
+            "Major": "Civil Engineering",
+            "Grade": "48"
+        },
+        {
+            "Student Id": "9164784",
+            "Student Name": "Mr. Juan Butler",
+            "Year": "Senior",
+            "School": "School of Engineering",
+            "Major": "Biomedical Engineering",
+            "Grade": "53"
+        },
+        {
+            "Student Id": "4918490",
+            "Student Name": "Mrs. Karen Vega MD",
+            "Year": "Freshman",
+            "School": "School of Engineering",
+            "Major": "Electrical & Electronics Engineering",
+            "Grade": "82"
+        },
+        {
+            "Student Id": "5051335",
+            "Student Name": "Peter Andrade",
+            "Year": "Sophomore",
+            "School": "School of Engineering",
+            "Major": "Environmental engineering",
+            "Grade": "17"
+        },
+        {
+            "Student Id": "1002030",
+            "Student Name": "Helen Johnson DDS",
+            "Year": "Freshman",
+            "School": "School of Computer Information and Data Sciences",
+            "Major": "Cybersecurity",
+            "Grade": "56"
+        },
+        {
+            "Student Id": "3729815",
+            "Student Name": "Matt Harris",
+            "Year": "Freshman",
+            "School": "School of Arts and Humanities",
+            "Major": "Economics",
+            "Grade": "78"
+        }
+    ],
+    "questions": [
+        {
+            "question": "Does student 3109998 has a higher grade than student 1002030?",
+            "answer": "No"
+        },
+        {
+            "question": "Does student 3729815 study the same major as student 5051335?",
+            "answer": "No"
+        },
+        {
+            "question": "Are student 9164784 and student 4918490 enrolled in the same school?",
+            "answer": "Yes"
+        },
+        {
+            "question": "Are student 8746953 and student 8732675 in the same year?",
+            "answer": "Yes"
+        },
+        "..."
+    ]
+}

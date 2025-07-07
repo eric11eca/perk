@@ -1,0 +1,36 @@
+# @package _global_
+
+# model_param:
+model_name_or_path: gpt2          # the HuggingFace name or path of the language model used in the experiment
+
+# path param:
+data_dir: /path/to/data              # the data directory for train and eval data
+output_dir: /path/to/checkpoints                # the output directory for checkpoints and predictions
+
+# inner_param:
+inner_opt: adam                   # the optimizer used for inner loop optimization: [adam, sgd] adam -> AdamW, sgd -> SGD
+inner_lr: 1e-5                    # the learning rate used for inner loop optimization
+
+# train_param:
+learning_rate: 5e-5               # the learning rate used for outer loop optimization
+warmup_proportion: 0.03           # the proportion of training steps to perform linear learning rate warmup for
+weight_decay: 0.1                 # the weight decay to apply (if not zero)
+adam_epsilon: 1e-8                # epsilon for Adam optimizer
+max_grad_norm: 1.0                # max gradient norm
+gradient_accumulation_steps: 1    # number of updates steps to accumulate before performing a backward/update pass
+callback_monitor: val_loss        # the metric to monitor for early stopping
+seed: 42                          # random seed for initialization
+patience: 5                       # the number of epochs to wait before early stopping
+
+# peft_param:
+lora_alpha: 32                    # the alpha parameter for LoRA
+lora_r: 16                        # the r parameter for LoRA
+
+# wandb_param:
+wandb_name: multi                 # the name of the experiment in wandb
+wandb_entity: <ENTITY>            # the wandb entity
+wandb_project: meta-memory        # the wandb project
+wandb_api_key: <API_KEY>          # the wandb api key
+
+# util_param:
+num_workers: 4

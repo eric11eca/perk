@@ -1,0 +1,72 @@
+# @package _global_
+
+defaults:
+  - override /default: default.yaml
+
+####### checkpoint params #######
+
+checkpoint: none                          # or <path_to_checkpoint>
+load_checkpoint: false                    # true/false whether to load the checkpoint from wandb
+resume_from_checkpoint: false             # true/false whether to resume training from the checkpoint
+
+####### experiment param #######
+
+do_train: true
+do_eval: true
+wandb_name: qwen-TGU-babilong-qa1-1k-lora-256-4-step
+wandb_project: meta-memory
+
+####### model params #######
+
+model_name_or_path: Qwen/Qwen2.5-0.5B
+
+peft_lora: true
+lora_rank: 256
+lora_alpha: 16
+
+bf16: true
+attn_implementation: flash_attention_2
+
+####### outer params #######
+
+train_batch_size: 1
+eval_batch_size: 1
+num_train_epochs: 2
+
+patience: 10
+callback_monitor: val_loss
+
+learning_rate: 1e-5
+max_grad_norm: 1.0
+weight_decay: 0.01
+warmup_proportion: 0.03           # 0.03, 0.005
+
+gradient_accumulation_steps: 1
+val_check_interval: 0.5
+use_liger_kernel: false
+n_gpu: 1
+
+####### inner params #######
+
+n_inner_iter: 4
+dyna_lr: true
+inner_lr: 5e-5
+inner_grad_accum: 1
+inner_funct: "truncated"  # default, truncated
+unroll_start: 2
+first_order: false
+
+weighted_loss: true
+weight_normalize: false
+weight_non_linearity: "softplus"
+weight_fuse: "concat"
+weight_q_pool: "cls"
+
+####### data params #######
+
+data_dir: <path_to_data>
+dataset_name: "babilong"
+dataset_subset: "qa1_1k"
+
+packing: true
+max_eval_data: 3000
