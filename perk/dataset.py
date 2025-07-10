@@ -76,32 +76,16 @@ class StudentRecordDataReader(DataReader):
         """
         guid = instance["guid"]
         problems = instance["questions"]
-
-        context = []
-        for record in instance["database"]:
-            context.append(dict_to_sequence(record))
-        context_window = args.context_window
-        random.shuffle(context)
+        context = [
+            dict_to_sequence(record)
+            for record in instance["database"]]
 
         examples = []
         for p in problems:
             q, a, s = p['question'], p['answer'], p.get('support', "")
-            if args.reduce_context:
-                context_set = set(context)
-                context_set.remove(s)
-                context_reduced = [s]
-                current_len = len(tokenizer.encode(s, add_special_tokens=False))
-                for record in context:
-                    record_len = len(tokenizer.encode(record, add_special_tokens=False))
-                    if current_len + record_len > context_window:
-                        break
-                    context_reduced.append(record)
-                    current_len += record_len
-            else:
-                context_reduced = context
             examples.append({
                 "guid": guid,
-                "context": context_reduced,
+                "context": context,
                 "qa_pairs": [[q, str(a), s]]
             })
         return examples
@@ -136,18 +120,13 @@ class StudentRecordDataReader(DataReader):
         elif args.student_record_query == "sort":
             dataset = read_jsonl(sort_path)
         else:
-            recall_data = read_jsonl(recall_path)
-            relation_data = read_jsonl(relation_path)
-            count_data = read_jsonl(count_path)
-            aggregate_data = read_jsonl(aggregate_path)
-            sort_data = read_jsonl(sort_path)
-            dataset = recall_data + relation_data + count_data + aggregate_data + sort_data
+            raise ValueError("Invalid student record query")
 
         total_data = [{
-            "guid": conx["database_id"],
-            "database": conx['database'],
-            "questions": data["questions"] if "questions" in data else data['question'],
-        } for conx, data in zip(context_data, dataset)]
+            "guid": db["database_id"],
+            "database": db['database'],
+            "questions": data["questions"]
+        } for db, data in zip(context_data, dataset)]
 
         dataset = []
         for instance in tqdm(total_data):
@@ -308,14 +287,14 @@ class MetaKnowledgeDataset(Dataset):
         sequences = []
         context = qa_data["context"]
 
-        record_ids = [i for i in range(len(context))]
+        doc_ids = [i for i in range(len(context))]
         if self.data_type == "train":
-            random.shuffle(record_ids)
-        for idx, fact in zip(record_ids, context):
-            sequences.append((f"record_{idx}:", fact))
+            random.shuffle(doc_ids)
+        for idx, fact in zip(doc_ids, context):
+            sequences.append((f"doc_{idx}:", fact))
             max_seq_length = max(
                 max_seq_length, self.compute_seq_length(
-                    f"record_{idx}:", fact))
+                    f"doc_{idx}:", fact))
 
         max_seq_length = min(max_seq_length, self.tokenizer.model_max_length)
         for prompt, response in sequences:
@@ -334,7 +313,8 @@ class MetaKnowledgeDataset(Dataset):
         dev_inputs, dev_outputs = [], []
         sequences = []
         max_seq_length = 0
-        prefix = f"record_0 to record_{len(context) - 1} are the information you memorized."
+
+        prefix = f"You have memorized {len(context)} documents."
         for qa_pair in qa_data["qa_pairs"]:
             prompt = f"{prefix}\n{qa_pair[0]}\nAnswer:"
             if qa_pair[2]:
