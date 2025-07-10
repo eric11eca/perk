@@ -119,11 +119,14 @@ The code is located in the `higher` folder. The `higher/optim.py` file is the ma
 If you find this work useful for your research, please cite:
 
 ```bibtex
-@article{perk2024,
-  title={PERK: Long-Context Reasoning as Test-Time Learning},
-  author={Zeming Chen, Author2, ...},
-  journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
+@article{chen2025perklongcontextreasoningparameterefficient,
+  title={PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning},
+  author={Zeming Chen and Angelika Romanou and Gail Weiss and Antoine Bosselut},
+  year={2025},
+  eprint={2507.06415},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2507.06415}
 }
 ```
 
