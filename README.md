@@ -2,9 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This is the official implementation of the paper: **[PERK: Long-Context Reasoning as Test-Time Learning](https://perk-long-context.web.app/static/pdf/perk_arxiv.pdf)**.
+This is the official implementation of the paper: **[PERK: Long-Context Reasoning as Test-Time Learning](https://arxiv.org/abs/2507.06415)**.
 
-**Project Page**: [https://perk-long-context.web.app/](https://perk-long-context.web.app)
+**Project Page**: [https://perk-long-context.web.app](https://perk-long-context.web.app)
+
+*More details about the implementation & experiments will be added and refined in the coming months.*
 
 <img src="./figures/perk_training.png" width="90%">
 
@@ -82,6 +84,7 @@ python run_maml.py experiment=meta_train
 The main configuration files are located in the `configs/` directory:
 
 - `configs/experiment/meta_train.yaml`: Configuration for meta-training
+- `configs/experiment/meta_test.yaml`: Configuration for meta-testing
 
 ## Evaluation
 
