@@ -4,9 +4,9 @@
 
 This is the official implementation of the paper: **[PERK: Long-Context Reasoning as Test-Time Learning](https://arxiv.org/abs/2507.06415)**.
 
-**Project Page**: [https://perk-long-context.web.app](https://perk-long-context.web.app)
+PERK applies **test-time training (TTT)** to long-context reasoning. The paper calls this process **test-time learning**. Gradient updates encode a long input into a LoRA adapter. This is parameter-based context compression. The adapted model answers questions using the encoded context instead of receiving the full text in its prompt.
 
-*More details about the implementation & experiments will be added and refined in the coming months.*
+**Project page:** [PERK](https://perk-long-context.web.app/) · **Published paper:** [ICLR 2026](https://proceedings.iclr.cc/paper_files/paper/2026/hash/1179c561a4efc77fbfda76aa1addce33-Abstract-Conference.html)
 
 <img src="./figures/perk_training.png" width="90%">
 
@@ -33,11 +33,11 @@ PERK is a novel approach for long-context reasoning that formulates the task as 
 
 ### Abstract
 
-Long-context reasoning requires accurately identifying relevant information in extensive, noisy input contexts. Previous research shows that using test-time learning to encode context directly into model parameters can effectively enable reasoning over noisy information. However, meta-learning methods for enabling test-time learning are prohibitively memory-intensive, preventing their application to long context settings.
+Long-context reasoning requires accurately identifying relevant information in extensive, noisy input contexts. In this work, we propose PERK (Parameter Efficient Reasoning over Knowledge), a scalable approach for learning to encode long contexts using gradient updates at test time. Specifically, PERK employs two nested optimization loops in a meta-training phase.
 
-In this work, we propose PERK (**P**arameter **E**fficient **R**easoning over **K**nowledge), a scalable approach for learning to encode long input contexts using gradient updates to a lightweight model adapter at test time. Specifically, PERK employs two nested optimization loops in a meta-training phase. The inner loop rapidly encodes contexts into a low-rank adapter (LoRA) that serves as a parameter-efficient memory module for the base model. Concurrently, the outer loop learns to use the updated adapter to accurately recall and reason over relevant information from the encoded long context.
+The inner loop rapidly encodes contexts into a low-rank adapter (LoRA) that serves as a parameter-efficient memory module for the base model. Concurrently, the outer loop learns to use the updated adapter to accurately recall and reason over relevant information from the encoded long context.
 
-Our evaluations on several long-context reasoning tasks show that PERK significantly outperforms the standard prompt-based long-context baseline, achieving average absolute performance gains of up to 90% for smaller models (GPT-2) and up to 27% for our largest evaluated model, Qwen-2.5-0.5B. In general, PERK is more robust to reasoning complexity, length extrapolation, and the locations of relevant information in contexts. Finally, we show that while PERK is memory-intensive during training, it scales more efficiently at inference time than prompt-based long-context inference.
+Our evaluations on several long-context reasoning tasks show that PERK significantly outperforms the standard long-context finetuning, achieving average absolute performance gains of up to 20% for Qwen-2.5 (0.5B & 7B) on synthetic and real-world long-context reasoning. PERK also maintains its advantages across model scales and families. Compared to specialized long-context LLMs, PERK matches or surpasses their performance. Finally, our analyses show PERK is more robust to reasoning complexity, length extrapolation, and the positions of relevant information in contexts.
 
 ## Installation
 
@@ -119,17 +119,15 @@ The code is located in the `higher` folder. The `higher/optim.py` file is the ma
 
 ## Citation
 
-If you find this work useful for your research, please cite:
+If you find this work useful for your research, please cite the published paper:
 
 ```bibtex
-@article{chen2025perklongcontextreasoningparameterefficient,
+@inproceedings{chen2026perk,
   title={PERK: Long-Context Reasoning as Parameter-Efficient Test-Time Learning},
   author={Zeming Chen and Angelika Romanou and Gail Weiss and Antoine Bosselut},
-  year={2025},
-  eprint={2507.06415},
-  archivePrefix={arXiv},
-  primaryClass={cs.CL},
-  url={https://arxiv.org/abs/2507.06415}
+  booktitle={International Conference on Learning Representations},
+  year={2026},
+  url={https://proceedings.iclr.cc/paper_files/paper/2026/hash/1179c561a4efc77fbfda76aa1addce33-Abstract-Conference.html}
 }
 ```
 
